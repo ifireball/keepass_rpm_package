@@ -1,6 +1,6 @@
 Name:           keepass
 Version:        2.26
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Password manager
 
 License:        GPLv2+
@@ -21,7 +21,7 @@ Patch1:         keepass-fix-XSL-search-path.patch
 Patch2:         keepass-enable-local-help.patch
 
 BuildRequires:  mono-devel archmage desktop-file-utils
-Requires:       xdotool xsel
+Requires:       xdotool xsel hicolor-icon-theme
 
 
 # The debuginfo package would be empty if created.
@@ -70,7 +70,7 @@ cp -pr Docs/Chm %{buildroot}/%{_docdir}/%{name}/
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/mime
-%{_datadir}/icons/hicolor
+%{_datadir}/icons/hicolor/256x256/apps/keepass.png
 %{_mandir}/man1/%{name}.1*
 %{_datadir}/appdata/%{name}.appdata.xml
 
@@ -107,6 +107,9 @@ Documentation for KeePass, a free open source password manager.
 
 
 %changelog
+* Thu May 22 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-6
+- Depend on hicolor-icon-theme.
+
 * Thu May 22 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-5
 - Use "*" rather than ".gz" as the man page suffix, in case the
   compression format changes.
