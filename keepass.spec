@@ -43,7 +43,7 @@ to unlock the whole database.
 %build
 ( cd Build && sh PrepMonoDev.sh )
 xbuild /target:KeePass /property:Configuration=Release
-python -c 'import archmod.CHM; archmod.CHM.CHMDir("Docs").process_templates("Docs/Chm")'
+%{__python2} -c 'import archmod.CHM; archmod.CHM.CHMDir("Docs").process_templates("Docs/Chm")'
 
 
 %install
@@ -111,6 +111,7 @@ Documentation for KeePass, a free open source password manager.
 - Use "*" rather than ".gz" as the man page suffix, in case the
   compression format changes.
 - Use "doc" rather than "-n %{name}-doc" in subpackages.
+- Use "%{__python2}" macro.
 
 * Sun May 18 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-4
 - Install .desktop file via desktop-file-install.
