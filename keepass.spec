@@ -1,6 +1,6 @@
 Name:           keepass
 Version:        2.26
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        Password manager
 
 License:        GPLv2+
@@ -20,6 +20,7 @@ Patch1:         keepass-fix-XSL-search-path.patch
 # Locate locally-installed help files:
 Patch2:         keepass-enable-local-help.patch
 
+ExcludeArch:    armv7hl
 BuildRequires:  mono-devel archmage desktop-file-utils python-devel
 Requires:       xdotool xsel hicolor-icon-theme
 
@@ -107,6 +108,9 @@ Documentation for KeePass, a free open source password manager.
 
 
 %changelog
+* Thu May 22 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-7
+- Mono crashes on ARM builders, so exclude that architecture.
+
 * Thu May 22 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-6
 - Depend on hicolor-icon-theme.
 - The "%{__python2}" macro requires python-devel.
