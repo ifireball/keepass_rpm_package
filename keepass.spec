@@ -1,6 +1,6 @@
 Name:           keepass
 Version:        2.26
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Password manager
 
 License:        GPLv2+
@@ -71,7 +71,7 @@ cp -pr Docs/Chm %{buildroot}/%{_docdir}/%{name}/
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/mime
 %{_datadir}/icons/hicolor
-%{_mandir}/man1/%{name}.1.gz
+%{_mandir}/man1/%{name}.1*
 %{_datadir}/appdata/%{name}.appdata.xml
 
 
@@ -107,6 +107,10 @@ Documentation for KeePass, a free open source password manager.
 
 
 %changelog
+* Thu May 22 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-5
+- Use "*" rather than ".gz" as the man page suffix, in case the
+  compression format changes.
+
 * Sun May 18 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-4
 - Install .desktop file via desktop-file-install.
 - Don't recreate the build-root.
