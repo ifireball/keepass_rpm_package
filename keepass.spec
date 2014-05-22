@@ -20,7 +20,7 @@ Patch1:         keepass-fix-XSL-search-path.patch
 # Locate locally-installed help files:
 Patch2:         keepass-enable-local-help.patch
 
-BuildRequires:  mono-devel archmage desktop-file-utils
+BuildRequires:  mono-devel archmage desktop-file-utils python-devel
 Requires:       xdotool xsel hicolor-icon-theme
 
 
@@ -109,6 +109,7 @@ Documentation for KeePass, a free open source password manager.
 %changelog
 * Thu May 22 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-6
 - Depend on hicolor-icon-theme.
+- The "%{__python2}" macro requires python-devel.
 
 * Thu May 22 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-5
 - Use "*" rather than ".gz" as the man page suffix, in case the
