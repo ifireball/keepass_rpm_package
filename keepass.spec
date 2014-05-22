@@ -98,10 +98,10 @@ fi
 Summary:        Documentation for the KeePass password manager
 BuildArch: 	noarch
 
-%description -n %{name}-doc
+%description doc
 Documentation for KeePass, a free open source password manager.
 
-%files -n %{name}-doc
+%files doc
 %dir %{_docdir}
 %doc %{_docdir}/%{name}/Chm/
 
@@ -110,6 +110,7 @@ Documentation for KeePass, a free open source password manager.
 * Thu May 22 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-5
 - Use "*" rather than ".gz" as the man page suffix, in case the
   compression format changes.
+- Use "doc" rather than "-n %{name}-doc" in subpackages.
 
 * Sun May 18 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-4
 - Install .desktop file via desktop-file-install.
