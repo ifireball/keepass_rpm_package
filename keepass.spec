@@ -1,6 +1,6 @@
 Name:           keepass
 Version:        2.26
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        Password manager
 
 License:        GPLv2+
@@ -22,6 +22,7 @@ Patch2:         keepass-enable-local-help.patch
 
 ExcludeArch:    armv7hl
 BuildRequires:  mono-devel archmage desktop-file-utils python-devel
+BuildRequires:  font(:lang=en)
 Requires:       xdotool xsel hicolor-icon-theme
 
 
@@ -108,6 +109,9 @@ Documentation for KeePass, a free open source password manager.
 
 
 %changelog
+* Fri May 23 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-8
+- Build fails on Fedora 20 and earlier if no fonts are installed.
+
 * Thu May 22 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-7
 - Mono crashes on ARM builders, so exclude that architecture.
 
