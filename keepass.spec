@@ -1,6 +1,6 @@
 Name:           keepass
 Version:        2.26
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        Password manager
 
 License:        GPLv2+
@@ -108,6 +108,9 @@ Documentation for KeePass, a free open source password manager.
 
 
 %changelog
+* Fri Jul 18 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-10
+- Add missing %u to Exec line in .desktop.
+
 * Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.26-9
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 

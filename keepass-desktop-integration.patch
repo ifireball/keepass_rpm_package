@@ -39,7 +39,7 @@ diff -uNr keepass-2.26/dist/keepass.desktop keepass/dist/keepass.desktop
 +[Desktop Entry]
 +Name=KeePass
 +GenericName=Password manager
-+Exec=keepass
++Exec=keepass %u
 +Icon=keepass
 +Terminal=false
 +Type=Application
