@@ -1,6 +1,6 @@
 Name:           keepass
-Version:        2.26
-Release:        10%{?dist}
+Version:        2.27
+Release:        1%{?dist}
 Summary:        Password manager
 
 License:        GPLv2+
@@ -109,6 +109,9 @@ Documentation for KeePass, a free open source password manager.
 
 
 %changelog
+* Fri Jul 18 2014 Peter Oliver <rpm@mavit.org.uk> - 2.27-1
+- Update to version 2.27.
+
 * Fri Jul 18 2014 Peter Oliver <rpm@mavit.org.uk> - 2.26-10
 - Add missing %u to Exec line in .desktop.
 
