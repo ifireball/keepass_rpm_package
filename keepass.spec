@@ -1,6 +1,6 @@
 Name:           keepass
 Version:        2.27
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Password manager
 
 License:        GPLv2+
@@ -78,21 +78,23 @@ cp -pr Docs/Chm %{buildroot}/%{_docdir}/%{name}/
 
 %post
 /usr/bin/update-desktop-database &> /dev/null || :
-/usr/bin/update-mime-database %{_datadir}/mime &> /dev/null || :
 /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
+/bin/touch --no-create %{_datadir}/mime/packages &> /dev/null || :
 
 
 %postun
 /usr/bin/update-desktop-database &> /dev/null || :
-/usr/bin/update-mime-database %{_datadir}/mime &> /dev/null || :
 if [ $1 -eq 0 ] ; then
     /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null
     /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+    /bin/touch --no-create %{_datadir}/mime/packages &> /dev/null || :
+    /usr/bin/update-mime-database %{?fedora:-n} %{_datadir}/mime &> /dev/null || :
 fi
 
 
 %posttrans
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+/usr/bin/update-mime-database %{?fedora:-n} %{_datadir}/mime &> /dev/null || :
 
 
 %package doc
@@ -108,6 +110,9 @@ Documentation for KeePass, a free open source password manager.
 
 
 %changelog
+* Mon Aug 18 2014 Rex Dieter <rdieter@fedoraproject.org> 2.27-3
+- update mime scriptlets
+
 * Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.27-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
